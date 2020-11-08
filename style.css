@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden;
+} 
+
+/* NavBar */
+
+nav {
+    display: flex;
+    background-color: rgb(112, 204, 216);
+    justify-content: space-around;
+    /*padding: 20px 0;*/
+    color: rgb(255, 0, 234);
+    height: 80px;
+    align-items: center;
+}
+
+nav .logo {
+    font-family: 'Sansita Swashed', cursive;
+    letter-spacing: 3px;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+
+}
+
+nav ul li a {
+   color: rgb(255, 0, 234);
+   text-decoration: none;
+   font-size: 0.8em;
+}
+
+nav ul li a:hover {
+    color: purple;
+}
+
+/* hambuger menu */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(128, 112, 216);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* hamburger menu animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked  ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked  ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+  }
+
+  .menu-toggle input:checked  ~ span:nth-child(3) {
+    transform: scale(0);
+  }
+
+  .container {
+      max-width: 500px;
+      margin: auto;
+      overflow: hidden;
+      padding: 0.3rem
+  }
+
+ 
+/* home */
+  .home {
+      background-color: rgb(132, 204, 226);
+      color: rgb(211, 17, 17);
+      height: 70vh;
+      background: url("fotogambar/donutfooter.jpg") no-repeat center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;    
+      justify-content: center;
+
+  }
+
+  /* button */
+
+  .btn {
+    padding: 0.3rem 1,4rem;
+    outline: none;
+    background: transparent;
+    font-size: 0,3rem;
+    border: 1px solid;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: border 1s linear;
+    text-align: center;
+    color: rgb(79, 42, 165);
+  }
+  .btn:hover {
+        border: none;
+        background: var(--clr-red);
+        color: var(--clr-white);
+        cursor: pointer;
+      }
+
+      /* menu */
+
+      h2{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }  
+
+      .menu-section {
+        padding: 2.5rem 0;
+      }
+      
+      
+      .menus {
+      display: grid;
+      grid-template-columns: 2fr 2fr; 
+      margin: 1rem;
+      }
+
+      .menu {
+        padding: 1rem;
+        text-align: center;
+      }
+     
+    /* about us */
+
+    .about-section {
+      position: relative;
+      padding: 3rem 0 4rem 0;
+      width: 100%;
+      color: black;
+      background: url("fotogambar/donutheader.jpg") no-repeat center/cover;
+    }
+
+
+    .about-section::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(197, 188, 188, 0.288)
+    }
+
+ 
+
+    .about h2.section-title {
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      width: 65%;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      z-index: 2;
+    }
+
+      
+      /*promo*/
+
+      .promo-section {
+        padding: 2rem 0;
+      }
+      
+      .promos {
+        margin: 2.4rem 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+      }
+
+        .promo {
+          border: 1px solid;
+          border-radius: 0.6rem;
+          padding: 1rem;
+        }
+
+        h3.promo-title {
+          font-size: 1.1rem;
+          margin-bottom: 0.4rem;
+        }
+        
+        .promo p.promo-description {
+          font-size: 0.95rem;
+          margin-bottom: 0.6rem;
+        }
+        
+        .promo p.promo-validity {
+          font-size: 0.8rem; 
+        }
+
+
+        /* Galerry */
+
+        .gallery {
+          display: grid;
+          grid-template-areas:
+          "gallery-1 gallery-2 gallery-3"
+          "gallery-1 gallery-4 gallery-4";
+          grid-gap: 5px;
+        }
+
+
+        .gallery a img {
+          width: 100%;
+          height: 100%;
+        }
+        
+        .gallery #gallery-1 {
+          grid-area: gallery-1;
+        }
+        .gallery #gallery-2 {
+          grid-area: gallery-2;
+        }
+        .gallery #gallery-3 {
+          grid-area: gallery-3;
+        }
+        .gallery #gallery-4 {
+          grid-area: gallery-4;
+        }
+      
+/* footer */
+
+.container-footer {
+  margin-top: 2rem ;
+  background-color: darkcyan;
+}
+
+.footer-content {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.social-media img {
+  width: 28px;
+  margin-right: 10px;
+  transform: scale(0.8);
+  transition: transform 250ms ease-in-out;
+}
+
+.footer-content p,
+  .footer-content ul li {
+    font-size: 0.9rem;
+    list-style-type: none;
+  }
+
+  .footer-content li a {
+    text-decoration: none;
+    margin: 2px;
+    
+  }
+  .social-media img:hover {
+    transform: scale(1);
+  }
+
+
+  /*Responsive Breakpoint */
+
+/* ukuran- tablet */
+@media screen and (max-width: 768px;) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+/* ukuran- mobile */
+
+@media screen and (max-width: 576px;) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 100vh;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
+      background-color: aquamarine;
+      z-index: -1;
+      transform: translateX(100%);
+    }
+
+
+    nav ul.slide {
+        transform: translateX(0);
+    }
